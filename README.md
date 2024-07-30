@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GitHub Action - Build and Push Docker Image
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This repository contains a GitHub Actions workflow to build and push a Docker image for a Next.js application to Docker Hub.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Automated build and push of Docker images.
+- Uses GitHub Actions to streamline the CI/CD process.
 
-## Learn More
+## Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- A Docker Hub account and repository.
+- GitHub repository with Dockerfile and Next.js app.
+- GitHub Secrets configured for Docker Hub authentication (`DOCKER_USERNAME` and `DOCKER_TOKEN`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Create a Docker Hub Repository**:
+   - Log in to Docker Hub and create a repository if you don't have one.
 
-## Deploy on Vercel
+2. **Add GitHub Secrets**:
+   - Go to `Settings` > `Secrets and variables` > `Actions` in your GitHub repository.
+   - Add `DOCKER_USERNAME` and `DOCKER_TOKEN` secrets with your Docker Hub credentials.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Configure the GitHub Actions Workflow**:
+   - Ensure your workflow file is in `.github/workflows/` directory.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Example file: `.github/workflows/main.yml`
+
